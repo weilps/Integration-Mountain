@@ -1,0 +1,78 @@
+@font-face {
+  font-family: "font-light";
+  src: url(../fonts/Merriweather/Merriweather-Light.ttf);
+}
+
+@font-face {
+  font-family: "font-bold";
+  src: url(../fonts/Inter/static/Inter-ExtraBold.ttf);
+}
+
+$color-light: #f2f3f3;
+$color-inter: #696463;
+$color-dark: #000000;
+
+$font-light: "font-light", sans-serif;
+$font-bold: "font-bold", sans-serif;
+
+$width-desktop: 80%;
+
+@mixin center-unique-child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+}
+
+body {
+  font-family: $font-light;
+  background: url(../images/bg.jpg) center/cover fixed;
+  min-height: 100vh;
+  //   overflow: hidden;
+}
+
+h1,
+h2,
+h3 {
+  font-family: $font-bold;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+  color: $color-dark;
+}
+
+i {
+  padding: 15px;
+  border-radius: 50%;
+}
+
+.container {
+  background: $color-light;
+}
+
+.button {
+  text-transform: uppercase;
+  text-align: center;
+  padding: 10px 35px;
+  border: $color-dark 1px solid;
+  font-family: $font-bold;
+  transition: 0.4s;
+  letter-spacing: 2px;
+  font-size: 0.8rem;
+  color: $color-dark;
+  //   display: block;
+  &:hover {
+    background: rgba(245, 245, 245, 0.333);
+  }
+}

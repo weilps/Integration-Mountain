@@ -1,0 +1,26 @@
+nav {
+  width: $width-desktop;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  text-align-last: left;
+  align-items: center;
+  transform: translateY(-100%);
+  background: rgba(245, 245, 245, 0.193);
+
+  ul {
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+    max-width: 50%;
+    li {
+      a,
+      a:visited {
+        font-family: $font-bold;
+        font-size: 0.7rem;
+        padding: 15px 10px;
+        color: $color-light;
+      }
+    }
+  }
+}
