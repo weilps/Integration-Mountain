@@ -12,6 +12,8 @@ $color-light: #f2f3f3;
 $color-inter: #696463;
 $color-dark: #000000;
 
+$color-border: #6964634b;
+
 $font-light: "font-light", sans-serif;
 $font-bold: "font-bold", sans-serif;
 
@@ -35,7 +37,6 @@ body {
   font-family: $font-light;
   background: url(../images/bg.jpg) center/cover fixed;
   min-height: 100vh;
-  //   overflow: hidden;
 }
 
 h1,
@@ -59,6 +60,7 @@ i {
 
 .container {
   background: $color-light;
+  padding: 25px 50px 50px;
 }
 
 .button {
@@ -71,8 +73,17 @@ i {
   letter-spacing: 2px;
   font-size: 0.8rem;
   color: $color-dark;
+  background: transparent;
+  max-width: 200px;
+  margin: 0 auto;
   //   display: block;
   &:hover {
-    background: rgba(245, 245, 245, 0.333);
+    background: $color-border;
+    scale: 1.02;
+    cursor: pointer;
+    color: $color-light;
+    a {
+      color: $color-light;
+    }
   }
 }

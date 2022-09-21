@@ -1,4 +1,102 @@
 footer {
   width: $width-desktop;
-  margin: 0 auto;
+  margin: 0 auto 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @media screen and (max-width: 750px) {
+    display: block;
+  }
+
+  .container,
+  .container2 {
+    box-shadow: inset 0 1px 0 $color-border;
+    width: 50%;
+    min-height: 525px;
+    background: $color-light;
+
+    @media screen and (max-width: 750px) {
+      width: 100%;
+    }
+
+    .f-left {
+      font-family: $font-bold;
+      text-transform: uppercase;
+      color: $color-inter;
+      letter-spacing: 1px;
+      form {
+        min-height: 450px;
+        display: grid;
+        grid-template-rows: 8% 10% 8% 10% 8% 36% 18%;
+        // align-items: center;
+        label {
+          font-size: 0.7rem;
+          padding: 15px 0;
+          letter-spacing: 2px;
+        }
+        #name,
+        #message,
+        #email {
+          border: $color-border 1px solid;
+          margin-top: 5px;
+          border-radius: 5px;
+          font-family: $font-light;
+          font-size: 1rem;
+          padding: 0 3px;
+          &:focus {
+            color: $color-inter;
+          }
+        }
+
+        .button {
+          margin: 30px auto 15px 0;
+          color: $color-inter;
+          border-color: $color-inter;
+        }
+      }
+    }
+    .f-right {
+      min-height: 525px;
+      display: grid;
+      grid-template-rows: 25% 25% 25% 25%;
+
+      .f-list {
+        display: grid;
+        grid-template-columns: 30% 70%;
+        font-size: 0.7rem;
+        align-items: center;
+        padding-left: 50px;
+        box-shadow: inset 1px 1px 0 $color-border;
+
+        @media screen and (max-width: 900px) {
+          display: block;
+          padding-top: 10%;
+        }
+        @media screen and (max-width: 750px) {
+          display: grid;
+          grid-template-columns: 30% 70%;
+          padding-top: 0;
+        }
+
+        span {
+          font-family: $font-bold;
+          color: $color-inter;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+        }
+        p {
+          color: $color-inter;
+          text-align: left;
+        }
+        ul {
+          display: flex;
+          li {
+            border-radius: 50%;
+            margin: 0 5px;
+            border: $color-border 1px solid;
+          }
+        }
+      }
+    }
+  }
 }
