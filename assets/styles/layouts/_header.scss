@@ -4,21 +4,48 @@ header {
   color: $color-light;
 
   .header-title {
-    width: 70%;
+    width: 80%;
+
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    // min-height: 90vh;
+    transform: translateY(100px);
+    animation: headerAnim 1.5s forwards;
+    animation-delay: 0.15s;
+
+    @keyframes headerAnim {
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
 
     h1 {
-      color: $color-light;
-      font-size: 2.5rem;
+      font-size: 4rem;
+      letter-spacing: 6px;
+
+      @media screen and (max-width: 800px) {
+        font-size: 2.5rem;
+      }
     }
 
     p {
-      padding: 10% 0;
+      padding: 7% 0;
       font-style: italic;
       line-height: 35px;
+      @media screen and (max-width: 800px) {
+        padding: 10% 0;
+      }
     }
 
     i {
-      border: $color-light 1px solid;
+      border: $color-light 2px solid;
+      font-size: 1.2rem;
+      color: $color-light;
+      @media screen and (max-width: 800px) {
+        font-size: 1rem;
+      }
     }
   }
 }

@@ -14,7 +14,7 @@ $color-dark: #000000;
 
 $color-border: #6964634b;
 
-$font-light: "font-light", sans-serif;
+$font-light: "font-light", serif;
 $font-bold: "font-bold", sans-serif;
 
 $width-desktop: 80%;
@@ -26,6 +26,12 @@ $width-desktop: 80%;
   text-align: center;
 }
 
+@mixin title {
+  font-family: $font-bold;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -33,18 +39,43 @@ $width-desktop: 80%;
   list-style-type: none;
 }
 
+// html {
+//     scroll-behavior: smooth;
+// }
+
 body {
   font-family: $font-light;
   background: url(../images/bg.jpg) center/cover fixed;
-  min-height: 100vh;
+  text-align: center;
+  max-width: 1300px;
+  margin: 0 auto;
+  z-index: -2;
+
+  //   screen animation on F5
+  &::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: $color-dark;
+    animation: animBefore 1.5s ease forwards;
+    animation-delay: 0.15s;
+    z-index: -1;
+
+    @keyframes animBefore {
+      to {
+        opacity: 0;
+      }
+    }
+  }
 }
 
 h1,
 h2,
 h3 {
-  font-family: $font-bold;
-  text-transform: uppercase;
-  letter-spacing: 3px;
+  @include title();
 }
 
 a,
@@ -64,26 +95,19 @@ i {
 }
 
 .button {
-  text-transform: uppercase;
-  text-align: center;
-  padding: 10px 35px;
-  border: $color-dark 1px solid;
-  font-family: $font-bold;
-  transition: 0.4s;
-  letter-spacing: 2px;
-  font-size: 0.8rem;
-  color: $color-dark;
   background: transparent;
-  max-width: 200px;
+  border: $color-dark 1px solid;
+  color: $color-dark;
+  width: 170px;
+  height: 45px;
+  font-size: 0.75rem;
+  @include title();
+  @include center-unique-child();
   margin: 0 auto;
-  //   display: block;
+  transition: 0.4s;
+
   &:hover {
-    background: $color-border;
-    scale: 1.02;
+    scale: 1.03;
     cursor: pointer;
-    color: $color-light;
-    a {
-      color: $color-light;
-    }
   }
 }

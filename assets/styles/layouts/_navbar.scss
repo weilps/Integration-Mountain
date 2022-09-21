@@ -5,73 +5,76 @@ nav {
   justify-content: space-between;
   text-align-last: left;
   align-items: center;
-  //   transform: translateY(-100%);
   height: 10vh;
   background: rgba(245, 245, 245, 0.25);
-}
+  z-index: 1;
 
-ul {
-  display: flex;
-  justify-content: space-between;
-  text-transform: uppercase;
-  max-width: 50%;
-  height: 100%;
-  align-items: center;
-
-  @media screen and (max-width: 950px) {
-    max-width: 70%;
-  }
-  @media screen and (max-width: 775px) {
-    max-width: none;
-    &:nth-child(2) {
-      display: none;
-    }
-    &:nth-child(1) {
-      width: 100%;
-      display: grid;
-      grid-template-columns: 34% 33% 33%;
-    }
-  }
-  li {
-    height: 100%;
+  ul {
     display: flex;
+    justify-content: space-between;
+    max-width: 50%;
+    height: 100%;
     align-items: center;
 
-    &:hover {
-      background: $color-light;
-      a,
-      a:visited {
-        color: $color-inter;
+    @media screen and (max-width: 950px) {
+      max-width: 70%;
+    }
+    @media screen and (max-width: 775px) {
+      max-width: none;
+      &:nth-child(2) {
+        display: none;
+      }
+      &:nth-child(1) {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 34% 33% 33%;
       }
     }
-    a,
-    a:visited {
+    li {
+      height: 100%;
       display: flex;
       align-items: center;
-      height: 100%;
-      font-family: $font-bold;
-      font-size: 0.7rem;
-      padding: 15px 10px;
-      color: $color-light;
-      margin: 0 auto;
-    }
-  }
 
-  &:nth-child(1) {
-    li {
-      &:nth-child(1) {
+      a,
+      a:visited {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        @include title;
+        letter-spacing: 2px;
+        font-size: 0.7rem;
+        padding: 15px 10px;
+        color: $color-light;
+        margin: 0 auto;
+      }
+
+      &:hover {
+        background: $color-light;
         a,
         a:visited {
           color: $color-inter;
         }
-        background: $color-light;
+      }
+    }
+
+    &:first-child {
+      li {
+        &:first-child {
+          a,
+          a:visited {
+            color: $color-inter;
+          }
+          background: $color-light;
+        }
       }
 
       &:hover {
-        background: rgba(245, 245, 245, 0.25);
-        a,
-        a:visited {
-          color: $color-light;
+        li:not(:hover) {
+          background: transparent;
+          a,
+          a:visited {
+            color: $color-light;
+          }
         }
       }
     }
