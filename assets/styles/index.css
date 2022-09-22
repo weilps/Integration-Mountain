@@ -244,6 +244,8 @@ nav ul li {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 nav ul li a,
@@ -299,88 +301,66 @@ main {
 
 main .container .p1 .date {
   position: relative;
+  display: block;
 }
 
 main .container .p1 .date::before, main .container .p1 .date::after {
   content: "";
   height: 1px;
   position: absolute;
-  width: 170%;
+  width: 37%;
   background: #696463;
   opacity: 0.3;
   top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 
 @media screen and (max-width: 800px) {
   main .container .p1 .date::before, main .container .p1 .date::after {
-    width: 100%;
+    width: 30%;
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 570px) {
   main .container .p1 .date::before, main .container .p1 .date::after {
-    width: 50%;
+    width: 25%;
   }
 }
 
 main .container .p1 .date::before {
-  left: -200%;
-}
-
-@media screen and (max-width: 800px) {
-  main .container .p1 .date::before {
-    left: -120%;
-  }
-}
-
-@media screen and (max-width: 500px) {
-  main .container .p1 .date::before {
-    left: -80%;
-  }
-}
-
-main .container .p1 .date::before {
-  left: -200%;
-}
-
-@media screen and (max-width: 800px) {
-  main .container .p1 .date::before {
-    left: -120%;
-  }
-}
-
-@media screen and (max-width: 500px) {
-  main .container .p1 .date::before {
-    left: -80%;
-  }
+  left: 0;
 }
 
 main .container .p1 .date::after {
-  right: -200%;
-}
-
-@media screen and (max-width: 800px) {
-  main .container .p1 .date::after {
-    right: -120%;
-  }
-}
-
-@media screen and (max-width: 500px) {
-  main .container .p1 .date::after {
-    right: -80%;
-  }
+  right: 0;
 }
 
 main .container h2 {
-  font-size: 1.8rem;
+  font-size: 3rem;
   font-weight: lighter;
   padding: 50px 0 30px;
 }
 
+@media screen and (max-width: 800px) {
+  main .container h2 {
+    font-size: 1.8rem;
+  }
+}
+
 main .container p {
+  width: 80%;
+  margin: 0 auto;
   font-style: italic;
   line-height: 35px;
   padding: 10px 0 40px;
+  font-size: 0.8rem;
+}
+
+@media screen and (max-width: 800px) {
+  main .container p {
+    width: 100%;
+  }
 }
 
 main .container .img {
@@ -418,15 +398,19 @@ main .p2 .container h3 {
   font-size: 1.5rem;
   font-weight: lighter;
   padding: 50px 0 30px;
+  line-height: 20px;
 }
 
 main .p2 .container p {
   font-style: normal;
+  text-align: left;
+  line-height: 30px;
+  font-size: 0.8rem;
 }
 
 footer {
   width: 80%;
-  margin: 0 auto 50px;
+  margin: 0 auto 70px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -436,9 +420,10 @@ footer {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  min-height: 640px;
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 790px) {
   footer {
     display: block;
   }
@@ -449,11 +434,10 @@ footer .container2 {
   -webkit-box-shadow: inset 0 1px 0 #6964634b;
           box-shadow: inset 0 1px 0 #6964634b;
   width: 50%;
-  min-height: 525px;
   background: #f2f3f3;
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 790px) {
   footer .container,
   footer .container2 {
     width: 100%;
@@ -463,9 +447,9 @@ footer .container2 {
 footer .container .f-left,
 footer .container2 .f-left {
   font-family: "font-bold", sans-serif;
+  letter-spacing: 3px;
   text-transform: uppercase;
   color: #696463;
-  letter-spacing: 1px;
 }
 
 footer .container .f-left form,
@@ -475,6 +459,7 @@ footer .container2 .f-left form {
   display: grid;
   -ms-grid-rows: 8% 10% 8% 10% 8% 36% 18%;
       grid-template-rows: 8% 10% 8% 10% 8% 36% 18%;
+  text-align: left;
 }
 
 footer .container .f-left form label,
@@ -484,26 +469,24 @@ footer .container2 .f-left form label {
   letter-spacing: 2px;
 }
 
-footer .container .f-left form #name,
-footer .container .f-left form #message,
-footer .container .f-left form #email,
-footer .container2 .f-left form #name,
-footer .container2 .f-left form #message,
-footer .container2 .f-left form #email {
+footer .container .f-left form input[type="text"],
+footer .container .f-left form textarea,
+footer .container2 .f-left form input[type="text"],
+footer .container2 .f-left form textarea {
+  background: none;
   border: #6964634b 1px solid;
   margin-top: 5px;
   border-radius: 5px;
   font-family: "font-light", serif;
   font-size: 1rem;
   padding: 0 3px;
+  resize: none;
 }
 
-footer .container .f-left form #name:focus,
-footer .container .f-left form #message:focus,
-footer .container .f-left form #email:focus,
-footer .container2 .f-left form #name:focus,
-footer .container2 .f-left form #message:focus,
-footer .container2 .f-left form #email:focus {
+footer .container .f-left form input[type="text"]:focus,
+footer .container .f-left form textarea:focus,
+footer .container2 .f-left form input[type="text"]:focus,
+footer .container2 .f-left form textarea:focus {
   color: #696463;
 }
 
@@ -519,12 +502,13 @@ footer .container2 .f-right {
   min-height: 525px;
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: 25% 25% 25% 25%;
-      grid-template-rows: 25% 25% 25% 25%;
+  -ms-grid-rows: 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr;
 }
 
 footer .container .f-right .f-list,
 footer .container2 .f-right .f-list {
+  max-width: 100%;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 30% 70%;
@@ -533,32 +517,17 @@ footer .container2 .f-right .f-list {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding-left: 50px;
   -webkit-box-shadow: inset 1px 1px 0 #6964634b;
           box-shadow: inset 1px 1px 0 #6964634b;
-}
-
-@media screen and (max-width: 900px) {
-  footer .container .f-right .f-list,
-  footer .container2 .f-right .f-list {
-    display: block;
-    padding-top: 10%;
-  }
-}
-
-@media screen and (max-width: 750px) {
-  footer .container .f-right .f-list,
-  footer .container2 .f-right .f-list {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 30% 70%;
-        grid-template-columns: 30% 70%;
-    padding-top: 0;
-  }
+  text-align: left;
+  padding: 0 10%;
 }
 
 footer .container .f-right .f-list span,
 footer .container2 .f-right .f-list span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   font-family: "font-bold", sans-serif;
   color: #696463;
   text-transform: uppercase;
@@ -568,7 +537,9 @@ footer .container2 .f-right .f-list span {
 footer .container .f-right .f-list p,
 footer .container2 .f-right .f-list p {
   color: #696463;
-  text-align: left;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 footer .container .f-right .f-list ul,

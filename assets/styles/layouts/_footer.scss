@@ -1,10 +1,11 @@
 footer {
   width: $width-desktop;
-  margin: 0 auto 50px;
+  margin: 0 auto 70px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  @media screen and (max-width: 750px) {
+  min-height: 640px;
+  @media screen and (max-width: 790px) {
     display: block;
   }
 
@@ -12,37 +13,35 @@ footer {
   .container2 {
     box-shadow: inset 0 1px 0 $color-border;
     width: 50%;
-    min-height: 525px;
     background: $color-light;
 
-    @media screen and (max-width: 750px) {
+    @media screen and (max-width: 790px) {
       width: 100%;
     }
 
     .f-left {
-      font-family: $font-bold;
-      text-transform: uppercase;
+      @include title;
       color: $color-inter;
-      letter-spacing: 1px;
       form {
         min-height: 450px;
         display: grid;
         grid-template-rows: 8% 10% 8% 10% 8% 36% 18%;
-        // align-items: center;
+        text-align: left;
         label {
           font-size: 0.7rem;
           padding: 15px 0;
           letter-spacing: 2px;
         }
-        #name,
-        #message,
-        #email {
+        input[type="text"],
+        textarea {
+          background: none;
           border: $color-border 1px solid;
           margin-top: 5px;
           border-radius: 5px;
           font-family: $font-light;
           font-size: 1rem;
           padding: 0 3px;
+          resize: none;
           &:focus {
             color: $color-inter;
           }
@@ -58,27 +57,21 @@ footer {
     .f-right {
       min-height: 525px;
       display: grid;
-      grid-template-rows: 25% 25% 25% 25%;
+      grid-template-rows: 1fr 1fr 1fr 1fr;
 
       .f-list {
+        max-width: 100%;
         display: grid;
         grid-template-columns: 30% 70%;
         font-size: 0.7rem;
         align-items: center;
-        padding-left: 50px;
+        // padding-left: 50px;
         box-shadow: inset 1px 1px 0 $color-border;
-
-        @media screen and (max-width: 900px) {
-          display: block;
-          padding-top: 10%;
-        }
-        @media screen and (max-width: 750px) {
-          display: grid;
-          grid-template-columns: 30% 70%;
-          padding-top: 0;
-        }
+        text-align: left;
+        padding: 0 10%;
 
         span {
+          display: flex;
           font-family: $font-bold;
           color: $color-inter;
           text-transform: uppercase;
@@ -86,7 +79,7 @@ footer {
         }
         p {
           color: $color-inter;
-          text-align: left;
+          display: flex;
         }
         ul {
           display: flex;

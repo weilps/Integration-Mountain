@@ -7,69 +7,58 @@ main {
     .p1 {
       .date {
         position: relative;
+        // pour qu'il prenne toute la longueur
+        display: block;
 
         &::before,
         &::after {
           content: "";
           height: 1px;
           position: absolute;
-          width: 170%;
+          width: 37%;
+          //   width: 170%;
           background: $color-inter;
           opacity: 0.3;
           top: 50%;
+          transform: translateY(-50%); // bonne pratique, ici initule
 
           @media screen and (max-width: 800px) {
-            width: 100%;
+            width: 30%;
           }
-          @media screen and (max-width: 500px) {
-            width: 50%;
-          }
-        }
-        &::before {
-          left: -200%;
-
-          @media screen and (max-width: 800px) {
-            left: -120%;
-          }
-          @media screen and (max-width: 500px) {
-            left: -80%;
+          @media screen and (max-width: 570px) {
+            width: 25%;
           }
         }
 
         &::before {
-          left: -200%;
-
-          @media screen and (max-width: 800px) {
-            left: -120%;
-          }
-          @media screen and (max-width: 500px) {
-            left: -80%;
-          }
+          left: 0;
         }
 
         &::after {
-          right: -200%;
-
-          @media screen and (max-width: 800px) {
-            right: -120%;
-          }
-          @media screen and (max-width: 500px) {
-            right: -80%;
-          }
+          right: 0;
         }
       }
     }
 
     h2 {
-      font-size: 1.8rem;
+      font-size: 3rem;
       font-weight: lighter;
       padding: 50px 0 30px;
+      @media screen and (max-width: 800px) {
+        font-size: 1.8rem;
+      }
     }
 
     p {
+      width: 80%;
+      margin: 0 auto;
       font-style: italic;
       line-height: 35px;
       padding: 10px 0 40px;
+      font-size: 0.8rem;
+      @media screen and (max-width: 800px) {
+        width: 100%;
+      }
     }
 
     .img {
@@ -96,10 +85,14 @@ main {
         font-size: 1.5rem;
         font-weight: lighter;
         padding: 50px 0 30px;
+        line-height: 20px;
       }
 
       p {
         font-style: normal;
+        text-align: left;
+        line-height: 30px;
+        font-size: 0.8rem;
       }
     }
   }
